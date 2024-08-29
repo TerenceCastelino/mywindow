@@ -1,1 +1,26 @@
-body {}
+.containerApp {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navSide {
+
+    height: 60px;
+    /* Ajuste cette valeur selon la hauteur que tu veux pour la barre de navigation */
+    width: 100%;
+}
+
+.app {
+    flex: 1;
+    /* Assure que cette section prenne tout l'espace disponible entre la nav et le footer */
+    padding: 20px;
+    /* Ajoute du padding si besoin */
+}
+
+.footer {
+    background: rgb(49, 48, 48);
+    height: 60px;
+    /* Ajuste cette valeur selon la hauteur que tu veux pour le footer */
+    width: 100%;
+}

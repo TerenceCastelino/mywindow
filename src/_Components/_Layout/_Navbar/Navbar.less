@@ -1,0 +1,103 @@
+// Variables pour les styles communs
+@nav-height: 60px; // Hauteur de la barre de navigation
+@nav-padding: 10px 20px; // Espacement interne (padding) de la barre de navigation
+@nav-bg-color: rgb(71, 70, 70); // Couleur de fond de la barre de navigation
+@link-color: white; // Couleur du texte des liens
+@link-margin: 0 10px; // Marge autour des liens
+@button-padding: 5px 10px; // Espacement interne (padding) des boutons
+@button-bg-color: white; // Couleur de fond des boutons
+@button-hover-bg-color: #eee; // Couleur de fond des boutons au survol (hover)
+@button-text-color: rgb(80, 73, 73); // Couleur du texte des boutons
+@media-breakpoint-md: 768px; // Point de rupture pour les écrans moyens
+@media-breakpoint-sm: 480px; // Point de rupture pour les petits écrans
+
+// Styles pour la barre de navigation principale
+.navBar {
+    display: flex; // Utilise flexbox pour aligner les éléments sur une seule ligne
+    justify-content: space-between; // Espace les éléments uniformément avec de l'espace entre eux
+    align-items: center; // Centre les éléments verticalement
+    padding: @nav-padding; // Applique le padding défini plus haut
+    background-color: @nav-bg-color; // Applique la couleur de fond définie
+    height: @nav-height; // Applique la hauteur définie
+
+    // Conteneurs pour les sections gauche, centre et droite de la barre de navigation
+    .navLeft,
+    .navCenter,
+    .navRight {
+        display: flex; // Utilise flexbox pour aligner les éléments enfants en ligne
+        align-items: center; // Centre les éléments enfants verticalement
+    }
+
+    // Styles pour les liens dans chaque section (gauche, centre, droite)
+    .navLeft a,
+    .navCenter a,
+    .navRight a {
+        color: @link-color; // Applique la couleur du texte définie pour les liens
+        text-decoration: none; // Supprime la décoration (soulignement) par défaut des liens
+        margin: @link-margin; // Applique la marge définie autour des liens
+    }
+
+    // Styles pour les boutons dans la section de droite (navRight)
+    .navRight button {
+        padding: @button-padding; // Applique le padding défini pour les boutons
+        background-color: @button-bg-color; // Applique la couleur de fond définie pour les boutons
+        border: none; // Supprime la bordure par défaut du bouton
+        color: @button-text-color; // Applique la couleur du texte définie pour les boutons
+        cursor: pointer; // Change le curseur en pointeur pour indiquer que c'est cliquable
+
+        // Styles au survol du bouton
+        &:hover {
+            background-color: @button-hover-bg-color; // Change la couleur de fond au survol
+        }
+    }
+}
+
+.berger {
+    display: none;
+}
+
+// Styles pour les écrans moyens (jusqu'à 768px de largeur)
+@media (max-width: @media-breakpoint-md) {
+    .navBar {
+
+        // Cacher la section centrale (navCenter) sur les écrans moyens et plus petits
+        .navCenter {
+            display: none; // Cacher les liens du centre sur les petits écrans
+        }
+
+        .berger {
+            display: block;
+        }
+
+
+    }
+
+
+}
+
+// Styles pour les petits écrans (jusqu'à 480px de largeur)
+@media (max-width: @media-breakpoint-sm) {
+    .navBar {
+        flex-direction: column; // Change la disposition en colonne (verticale) pour les petits écrans
+        height: auto; // La hauteur s'adapte automatiquement au contenu
+
+        // Aligne la section gauche et droite au centre et occupe toute la largeur
+        .navLeft,
+        .navRight {
+            justify-content: center; // Centre les éléments horizontalement
+            width: 100%; // Occupe toute la largeur disponible
+        }
+
+        // Ajoute de la marge autour des sections (gauche, droite, centre)
+        .navLeft,
+        .navRight,
+        .navCenter {
+            margin: 5px 0; // Ajoute une petite marge verticale
+        }
+
+        .berger {
+            display: block;
+        }
+
+    }
+}

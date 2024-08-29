@@ -1,0 +1,61 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #474646;
+  height: 60px;
+}
+.navBar .navLeft,
+.navBar .navCenter,
+.navBar .navRight {
+  display: flex;
+  align-items: center;
+}
+.navBar .navLeft a,
+.navBar .navCenter a,
+.navBar .navRight a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.navBar .navRight button {
+  padding: 5px 10px;
+  background-color: white;
+  border: none;
+  color: #504949;
+  cursor: pointer;
+}
+.navBar .navRight button:hover {
+  background-color: #eee;
+}
+.berger {
+  display: none;
+}
+@media (max-width: 768px) {
+  .navBar .navCenter {
+    display: none;
+  }
+  .navBar .berger {
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  .navBar {
+    flex-direction: column;
+    height: auto;
+  }
+  .navBar .navLeft,
+  .navBar .navRight {
+    justify-content: center;
+    width: 100%;
+  }
+  .navBar .navLeft,
+  .navBar .navRight,
+  .navBar .navCenter {
+    margin: 5px 0;
+  }
+  .navBar .berger {
+    display: block;
+  }
+}

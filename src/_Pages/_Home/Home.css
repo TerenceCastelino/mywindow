@@ -1,0 +1,20 @@
+#description {
+  background: red;
+  height: 50px;
+  width: 80%;
+}
+#panelEntreprise {
+  background: #22ff00;
+  height: 50px;
+  width: 80%;
+}
+#panelProfil {
+  background: #0055ff;
+  height: 50px;
+  width: 80%;
+}
+#newProfil {
+  background: #ff006f;
+  height: 50px;
+  width: 80%;
+}
